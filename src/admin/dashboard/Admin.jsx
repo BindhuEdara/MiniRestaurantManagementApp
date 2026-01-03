@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Card from "./Card";
+import Card from "./Sidebar";
+import Sidebar from "./Sidebar";
 
 function Admin() {
 
@@ -9,20 +10,24 @@ function Admin() {
     setDetails((prev)=> [...prev, details])
   }
 
-  // const updateDetails = (id) => {
-  //   const newDetails =
-  // }
+  const updateDetails = () => {
 
+  }
+  const deleteDetails = (id) => {
+    setDetails((prev)=> prev.filter(item)=> item.id !== id)
+  }
 
 
   return (
     <div>
-      <Card addDetails={addDetails}/>
+      <Sidebar addDetails={addDetails}/>
       <div>
         {details.map((item) => (
-          <Card 
+          <Card
             key={item.id}
             item={item}
+            onUpdateDetails={updateDetails}
+            deleteDetails={deleteDetails}
           />
         ))}
     </div>

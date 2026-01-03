@@ -1,4 +1,4 @@
-function Card() {
+function Sidebar() {
   return (
     <div style={{width:"100%" , display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"start", textAlign:"center"}}>
       <h2>Add Restaurant</h2>
@@ -32,4 +32,4 @@ function Card() {
     </div>
   )
 }
-export default Card
+export default Sidebar
