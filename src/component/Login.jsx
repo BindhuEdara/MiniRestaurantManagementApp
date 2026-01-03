@@ -1,26 +1,30 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 
-function Login () {
+const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const emailRef = useRef(null)
-  // const { setIsAuth } = useContext(AuthContext);
+  const { setIsAuth } = useContext(AuthContext);
+
+  useEffect(() => {
+    emailRef.current.focus();
+  })
 
   const handleSubmit = () => {
     if (email === "admin@gmail.com" && password === "admin1234") {
       alert("login successfully");
-      // setIsAuth(true);
+      setIsAuth(true);
       navigate('/admin/dashboard')
     } else  {
       alert("Invalid Login details")
     }
     if (email === "customer@gmail.com" && password === "customer1234") {
       alert("customer login successfully")
-      // setIsAuth(true);
+      setIsAuth(true);
       navigate('/customers/dashboard')
     } else {
       alert("Invalid login details")
