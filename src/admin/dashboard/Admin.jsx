@@ -14,7 +14,7 @@ function Admin() {
 
   }
   const deleteDetails = (id) => {
-    setDetails((prev)=> prev.filter(item)=> item.id !== id)
+    setDetails((prev) => prev.filter((item)=> item.id !== id));
   }
 
 
@@ -23,7 +23,7 @@ function Admin() {
       <Sidebar addDetails={addDetails}/>
       <div>
         {details.map((item) => (
-          <Card
+          <Sidebar
             key={item.id}
             item={item}
             onUpdateDetails={updateDetails}
